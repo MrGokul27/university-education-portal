@@ -824,7 +824,7 @@ figure {
 ========================================== */
 .banner_home_one {
   position: relative;
-  padding: 135px 0 145px;
+  padding: 50px 0 145px;
   background-size: cover;
   background-position: center;
   color: var(--white);
@@ -1942,6 +1942,8 @@ figure {
 
   .mobile_Sticky_brand {
     display: inline-flex !important;
+    filter: invert(44%) sepia(72%) saturate(600%) hue-rotate(308deg)
+      brightness(100%) contrast(95%);
   }
 
   .main-menu {
@@ -1997,5 +1999,9 @@ figure {
     position: relative;
     width: 100%;
     margin-top: 16px;
+  }
+
+  .banner_home_one {
+    padding: 40px 0 85px;
   }
 }
