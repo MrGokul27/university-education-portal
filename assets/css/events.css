@@ -1,0 +1,98 @@
+/* Featured Flagship Event Countdown Banner */
+.flagship_event_wrap {
+  background: linear-gradient(130deg, var(--theme-color-two) 0%, #16222d 100%);
+  border-radius: 24px;
+  padding: 48px 42px;
+  color: var(--white);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.countdown_timer_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 24px 0;
+}
+
+.countdown_unit {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 14px;
+  padding: 16px 10px;
+  text-align: center;
+}
+
+.countdown_unit strong {
+  display: block;
+  font-family: var(--titillium);
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--secondary-color);
+  line-height: 1.1;
+}
+
+.countdown_unit span {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Conference Agenda Timeline Slots */
+.agenda_slot_card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 26px 28px;
+  border: 1px solid var(--border-color);
+  border-left: 5px solid var(--primary-color);
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.agenda_slot_card:hover {
+  transform: translateX(8px);
+  box-shadow: var(--shadow-md);
+  border-left-color: var(--theme-color-one);
+}
+
+.agenda_time_pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(240, 92, 114, 0.12);
+  color: var(--primary-color);
+  font-family: var(--titillium);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 5px 14px;
+  border-radius: 50px;
+}
+
+/* Campus Venue Showcase Cards */
+.venue_hall_card {
+  background: var(--white);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.venue_hall_card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+}
+
+.venue_capacity_tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--theme-color-one);
+}

@@ -1,0 +1,107 @@
+/* Featured Editorial Spotlight */
+.editorial_spotlight_box {
+  background: var(--white);
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+}
+
+.editorial_spotlight_img {
+  height: 100%;
+  min-height: 360px;
+  position: relative;
+  overflow: hidden;
+}
+
+.editorial_spotlight_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.editorial_spotlight_box:hover .editorial_spotlight_img img {
+  transform: scale(1.06);
+}
+
+.editorial_spotlight_content {
+  padding: 42px 38px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Topic Explorer Chips */
+.blog_topic_card {
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px 20px;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.blog_topic_card:hover {
+  background: var(--theme-color-two);
+  color: var(--white);
+  transform: translateY(-7px);
+  box-shadow: var(--shadow-md);
+}
+
+.blog_topic_card:hover h4 {
+  color: var(--white);
+}
+
+.blog_topic_icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  background: rgba(240, 92, 114, 0.12);
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 14px;
+  transition: var(--transition);
+}
+
+.blog_topic_card:hover .blog_topic_icon {
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+/* Academic Podcast / Media Cards */
+.podcast_episode_card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  padding: 26px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.podcast_episode_card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-6px);
+}
+
+.podcast_play_pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--secondary-color);
+  font-family: var(--titillium);
+  font-weight: 700;
+  margin-top: auto;
+}

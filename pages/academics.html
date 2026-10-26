@@ -1,0 +1,906 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Academics & Faculties at Stackly University Education Portal - Undergraduate, Postgraduate, and Doctoral Degree Programmes in Oxford, UK."
+    />
+    <title>
+      Academics &amp; Faculties | Stackly University Education Portal
+    </title>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../assets/images/logoStackly.webp"
+    />
+    <!-- Bootstrap 5.3 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome 6.6 Latest Icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Main & Page Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/academics.css" />
+  </head>
+  <body class="boxed_wrapper">
+    <!-- Common Header Component -->
+    <div id="header-component"></div>
+
+    <!-- SECTION 1: Unified Inner Page Banner with Breadcrumbs & Description -->
+    <section
+      class="page_banner_section"
+      style="
+        background-image: url(&quot;https://images.unsplash.com/photo-1507842229356-51c61504d3ab?auto=format&fit=crop&w=1600&q=80&quot;);
+      "
+    >
+      <div class="container">
+        <div class="page_banner_content">
+          <span class="page_banner_badge"
+            ><i class="fa-solid fa-book-open-reader"></i> Curriculum &amp;
+            Research Excellence</span
+          >
+          <h1>Academics &amp; Degree Faculties</h1>
+          <p>
+            Explore 140+ honours undergraduate majors, specialized masters
+            programmes, and doctoral fellowships across our eight
+            interdisciplinary schools in Oxford, United Kingdom.
+          </p>
+          <nav aria-label="breadcrumb">
+            <ol class="theme_breadcrumb">
+              <li>
+                <a href="../index.html"
+                  ><i class="fa-solid fa-house"></i> Home</a
+                >
+                <i class="fa-solid fa-chevron-right small"></i>
+              </li>
+              <li>
+                <span>University Education Portal</span>
+                <i class="fa-solid fa-chevron-right small"></i>
+              </li>
+              <li class="active" aria-current="page">Academics</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Interactive Degree Explorer & Filterable Programmes -->
+    <section class="sec_padding_110">
+      <div class="container">
+        <div class="section_title_one centred mb_40">
+          <h5>
+            <i class="fa-solid fa-graduation-cap"></i> Programme Directory
+          </h5>
+          <h2>Filter Accredited Degrees by Academic Division</h2>
+          <p>
+            Select a division below to explore flagship honours, masters, and
+            doctoral programmes tailored for global careers.
+          </p>
+        </div>
+
+        <div class="academic_filter_nav">
+          <button
+            type="button"
+            class="academic_filter_btn active"
+            data-filter-btn="all"
+          >
+            All Faculties (6)
+          </button>
+          <button
+            type="button"
+            class="academic_filter_btn"
+            data-filter-btn="stem"
+          >
+            Engineering &amp; AI
+          </button>
+          <button
+            type="button"
+            class="academic_filter_btn"
+            data-filter-btn="med"
+          >
+            Medicine &amp; Life Sciences
+          </button>
+          <button
+            type="button"
+            class="academic_filter_btn"
+            data-filter-btn="bus"
+          >
+            Business, Law &amp; Policy
+          </button>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6" data-filter-item="stem">
+            <div class="degree_program_card">
+              <div class="degree_meta_tags">
+                <span class="degree_tag tag_level">BSc / MEng (Hons)</span>
+                <span class="degree_tag">4 Years Full-Time</span>
+              </div>
+              <h3>Artificial Intelligence &amp; Quantum Computing</h3>
+              <p>
+                Master deep reinforcement learning, neural architectures, and
+                fault-tolerant quantum algorithms in our Oxford supercomputing
+                lab.
+              </p>
+              <div class="portal_card_footer">
+                <span class="small fw-bold"
+                  ><i class="fa-solid fa-code text-info me-1"></i> UCAS Code:
+                  G402</span
+                >
+                <a
+                  href="admissions.html"
+                  class="fw-bold"
+                  style="color: var(--primary-color)"
+                  >Apply Now <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-filter-item="stem">
+            <div class="degree_program_card">
+              <div class="degree_meta_tags">
+                <span class="degree_tag tag_level">MEng (Hons)</span>
+                <span class="degree_tag">4 Years + Placement</span>
+              </div>
+              <h3>Aerospace &amp; Autonomous Robotics Engineering</h3>
+              <p>
+                Design hypersonic propulsion systems, unmanned aerial vehicles,
+                and bio-inspired robotic actuators with industrial partners.
+              </p>
+              <div class="portal_card_footer">
+                <span class="small fw-bold"
+                  ><i class="fa-solid fa-jet-fighter text-info me-1"></i> UCAS
+                  Code: H410</span
+                >
+                <a
+                  href="admissions.html"
+                  style="color: var(--primary-color)"
+                  class="fw-bold"
+                  >Apply Now <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-filter-item="med">
+            <div class="degree_program_card">
+              <div class="degree_meta_tags">
+                <span class="degree_tag tag_level">BM BCh / MBBS</span>
+                <span class="degree_tag">6 Years Clinical</span>
+              </div>
+              <h3>Clinical Medicine &amp; Translational Surgery</h3>
+              <p>
+                Pre-clinical biomedical sciences followed by rotations across
+                Oxford University Hospitals and genomic oncology research
+                centres.
+              </p>
+              <div class="portal_card_footer">
+                <span class="small fw-bold"
+                  ><i class="fa-solid fa-stethoscope text-info me-1"></i> UCAS
+                  Code: A100</span
+                >
+                <a
+                  href="admissions.html"
+                  style="color: var(--primary-color)"
+                  class="fw-bold"
+                  >Apply Now <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-filter-item="med">
+            <div class="degree_program_card">
+              <div class="degree_meta_tags">
+                <span class="degree_tag tag_level">MSc Postgraduate</span>
+                <span class="degree_tag">1 Year Intensive</span>
+              </div>
+              <h3>Genomic Pharmacology &amp; Neurobiology</h3>
+              <p>
+                Investigate targeted mRNA therapeutics, neurodegenerative
+                synaptic pathways, and computational drug discovery pipelines.
+              </p>
+              <div class="portal_card_footer">
+                <span class="small fw-bold"
+                  ><i class="fa-solid fa-dna text-info me-1"></i> Code:
+                  PG-BIO8</span
+                >
+                <a
+                  href="admissions.html"
+                  style="color: var(--primary-color)"
+                  class="fw-bold"
+                  >Apply Now <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-filter-item="bus">
+            <div class="degree_program_card">
+              <div class="degree_meta_tags">
+                <span class="degree_tag tag_level">BA (Hons)</span>
+                <span class="degree_tag">3 Years Full-Time</span>
+              </div>
+              <h3>Philosophy, Politics &amp; Quantitative Economics</h3>
+              <p>
+                Our signature interdisciplinary degree training prime ministers,
+                central bankers, and global policy strategists.
+              </p>
+              <div class="portal_card_footer">
+                <span class="small fw-bold"
+                  ><i class="fa-solid fa-scale-balanced text-info me-1"></i>
+                  UCAS Code: L0V0</span
+                >
+                <a
+                  href="admissions.html"
+                  style="color: var(--primary-color)"
+                  class="fw-bold"
+                  >Apply Now <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-filter-item="bus">
+            <div class="degree_program_card">
+              <div class="degree_meta_tags">
+                <span class="degree_tag tag_level">Executive MBA / MFin</span>
+                <span class="degree_tag">12 Months</span>
+              </div>
+              <h3>Global Sustainable Finance &amp; Venture Leadership</h3>
+              <p>
+                Combine econometric risk modelling, ESG capital markets, and
+                deep-tech commercialization in the heart of the UK.
+              </p>
+              <div class="portal_card_footer">
+                <span class="small fw-bold"
+                  ><i class="fa-solid fa-chart-pie text-info me-1"></i> Code:
+                  MBA-OX1</span
+                >
+                <a
+                  href="admissions.html"
+                  style="color: var(--primary-color)"
+                  class="fw-bold"
+                  >Apply Now <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Undergraduate Honours Tutorial System -->
+    <section class="sec_padding_110 bg_light_portal">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <img
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80"
+              alt="Oxford Small Group Tutorial Session"
+              class="rounded-4 shadow-lg w-100"
+              style="height: 430px; object-fit: cover"
+            />
+          </div>
+          <div class="col-lg-6">
+            <span class="theme_subtitle"
+              ><i class="fa-solid fa-comments"></i> The Stackly Pedagogy</span
+            >
+            <h2>
+              The Collegiate Tutorial System: Personalized 2-on-1 Academic
+              Mentorship
+            </h2>
+            <p>
+              Unlike mass lecture-only institutions, every undergraduate at
+              Stackly University participates in weekly small-group tutorials
+              with leading professors in their field.
+            </p>
+            <div class="row g-3 mt-3">
+              <div class="col-sm-6">
+                <div class="p-3 bg-white rounded-4 border h-100">
+                  <h5 class="mb-1">
+                    <i class="fa-solid fa-pen-nib text-danger me-2"></i>
+                    Critical Dialectic
+                  </h5>
+                  <p class="small mb-0">
+                    Defend weekly research essays and problem sets in rigorous
+                    Socratic dialogue.
+                  </p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 bg-white rounded-4 border h-100">
+                  <h5 class="mb-1">
+                    <i class="fa-solid fa-flask-vial text-info me-2"></i> Early
+                    Lab Access
+                  </h5>
+                  <p class="small mb-0">
+                    Join funded faculty research groups starting in your very
+                    first Michaelmas Term.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4">
+              <a href="admissions.html" class="button-style-one"
+                >Explore Undergraduate Entry
+                <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Postgraduate & Doctoral Research Schools -->
+    <section class="sec_padding_110">
+      <div class="container">
+        <div class="section_title_one centred mb_50">
+          <h5><i class="fa-solid fa-microscope"></i> Graduate Studies</h5>
+          <h2>Postgraduate Masters &amp; Doctoral Research Centres</h2>
+          <p>
+            Join 7,200+ graduate researchers pushing the boundaries of science,
+            humanities, and clinical innovation.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="portal_card">
+              <div class="portal_card_img">
+                <img
+                  src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80"
+                  alt="Robotics and Quantum Engineering Lab"
+                />
+                <span class="portal_card_badge">320+ DPhil Scholars</span>
+              </div>
+              <div class="portal_card_body">
+                <h3>Doctoral Training Centre in Autonomous Systems</h3>
+                <p>
+                  4-year fully funded PhD fellowships with £21,500 tax-free
+                  annual stipends and industrial co-supervision.
+                </p>
+                <div class="portal_card_footer">
+                  <span
+                    ><i class="fa-solid fa-check-circle text-success me-1"></i>
+                    Full Stipend Included</span
+                  >
+                  <a
+                    href="admissions.html"
+                    class="fw-bold"
+                    style="color: var(--primary-color)"
+                    >Apply DPhil</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="portal_card">
+              <div class="portal_card_img">
+                <img
+                  src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80"
+                  alt="Clinical Trial and Molecular Lab"
+                />
+                <span
+                  class="portal_card_badge"
+                  style="background: var(--theme-color-one)"
+                  >Wellcome Funded</span
+                >
+              </div>
+              <div class="portal_card_body">
+                <h3>Institute of Cellular &amp; Viral Immunology</h3>
+                <p>
+                  Interdisciplinary MSc by Research and DPhil tracks developing
+                  next-generation vaccines and immunotherapies.
+                </p>
+                <div class="portal_card_footer">
+                  <span
+                    ><i class="fa-solid fa-check-circle text-success me-1"></i>
+                    Clinical Rotations</span
+                  >
+                  <a
+                    href="admissions.html"
+                    class="fw-bold"
+                    style="color: var(--primary-color)"
+                    >Apply MSc</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12">
+            <div class="portal_card">
+              <div class="portal_card_img">
+                <img
+                  src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80"
+                  alt="Global Public Policy and Law School"
+                />
+                <span
+                  class="portal_card_badge"
+                  style="background: var(--secondary-color)"
+                  >Policy &amp; Law</span
+                >
+              </div>
+              <div class="portal_card_body">
+                <h3>Wellington School of Transnational Governance</h3>
+                <p>
+                  Master of Public Policy (MPP) and Bachelor of Civil Law (BCL)
+                  cohorts training diplomatic and judicial leaders.
+                </p>
+                <div class="portal_card_footer">
+                  <span
+                    ><i class="fa-solid fa-check-circle text-success me-1"></i>
+                    UN &amp; EU Internships</span
+                  >
+                  <a
+                    href="admissions.html"
+                    class="fw-bold"
+                    style="color: var(--primary-color)"
+                    >Apply MPP</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Bodleian & Wellington Digital Library Ecosystem -->
+    <section class="sec_padding_110 bg_dark_portal">
+      <div class="container">
+        <div class="section_title_one centred mb_50">
+          <h5
+            style="
+              background: rgba(2, 194, 197, 0.2);
+              color: var(--theme-color-one);
+            "
+          >
+            <i class="fa-solid fa-book-bookmark"></i> Knowledge Repositories
+          </h5>
+          <h2 class="text-white">
+            World-Renowned Libraries &amp; Digital Archives
+          </h2>
+          <p class="text-white-50">
+            Unrestricted 24/7 access to physical rare collections and
+            petabyte-scale academic journals.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="library_stat_tile">
+              <i
+                class="fa-solid fa-book-journal-whills fs-1 mb-3"
+                style="color: var(--secondary-color)"
+              ></i>
+              <h3 class="text-white">2.4 Million+</h3>
+              <p class="text-white-50 mb-0 mt-auto">
+                Print volumes, legal deposit monographs, and classical
+                manuscripts across 9 campus libraries.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="library_stat_tile">
+              <i
+                class="fa-solid fa-database fs-1 mb-3"
+                style="color: var(--primary-color)"
+              ></i>
+              <h3 class="text-white">145,000+</h3>
+              <p class="text-white-50 mb-0 mt-auto">
+                Full-text peer-reviewed e-journals, IEEE, Nature, Lancet, and
+                JSTOR archival databases.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="library_stat_tile">
+              <i
+                class="fa-solid fa-laptop-file fs-1 mb-3"
+                style="color: var(--theme-color-one)"
+              ></i>
+              <h3 class="text-white">3,800 Seats</h3>
+              <p class="text-white-50 mb-0 mt-auto">
+                Silent reading rooms, group media pods, and assistive technology
+                study booths open 24/7.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="library_stat_tile">
+              <i
+                class="fa-solid fa-user-tie fs-1 mb-3"
+                style="color: var(--secondary-color)"
+              ></i>
+              <h3 class="text-white">95 Subject</h3>
+              <p class="text-white-50 mb-0 mt-auto">
+                Dedicated specialist librarians providing 1-on-1 systematic
+                review and citation coaching.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: Official Academic Calendar (Michaelmas, Hilary & Trinity Terms) -->
+    <section class="sec_padding_110">
+      <div class="container">
+        <div class="section_title_one centred mb_50">
+          <h5><i class="fa-solid fa-calendar-week"></i> Term Dates</h5>
+          <h2>2026 / 2027 Official Oxford Academic Calendar</h2>
+          <p>
+            Our academic year is structured into three eight-week residential
+            teaching terms plus summer research periods.
+          </p>
+        </div>
+        <div class="academic_calendar_box">
+          <div class="table-responsive">
+            <table class="academic_calendar_table">
+              <thead>
+                <tr>
+                  <th>Academic Term / Milestone</th>
+                  <th>Start Date</th>
+                  <th>End Date</th>
+                  <th>Key Academic Activities</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Michaelmas Term (Autumn)</strong></td>
+                  <td>11 October 2026</td>
+                  <td>05 December 2026</td>
+                  <td>
+                    Matriculation Ceremony, Core Lectures &amp; Freshers
+                    Induction
+                  </td>
+                  <td><span class="term_status_badge">Active Intake</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Hilary Term (Spring)</strong></td>
+                  <td>17 January 2027</td>
+                  <td>13 March 2027</td>
+                  <td>
+                    Honours Seminars, Collections Assessments &amp; Lab Symposia
+                  </td>
+                  <td><span class="term_status_badge">Upcoming</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Trinity Term (Summer)</strong></td>
+                  <td>25 April 2027</td>
+                  <td>19 June 2027</td>
+                  <td>
+                    Final Honours Examinations, Thesis Viva &amp; Encaenia
+                    Commemoration
+                  </td>
+                  <td><span class="term_status_badge">Scheduled</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Summer Research &amp; Placement</strong></td>
+                  <td>28 June 2027</td>
+                  <td>04 September 2027</td>
+                  <td>
+                    Global Industry Internships &amp; Funded Lab Fellowships
+                  </td>
+                  <td>
+                    <span class="term_status_badge">Open Registration</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: Digital Learning & Hybrid Portal Ecosystem -->
+    <section class="sec_padding_110 bg_light_portal">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <span class="theme_subtitle"
+              ><i class="fa-solid fa-cloud-arrow-up"></i> EdTech
+              Innovation</span
+            >
+            <h2>Stackly Canvas &amp; Virtual Lab Simulation Cloud</h2>
+            <p>
+              Every enrolled scholar receives full credentials to our
+              cloud-based University Education Portal, offering 4K lecture
+              capture, GPU-accelerated Jupyter notebooks, and virtual reality
+              anatomy suites.
+            </p>
+            <ul class="feature_list mt-4">
+              <li>
+                <i class="fa-solid fa-check"></i> On-demand 4K recordings of all
+                faculty lectures with AI transcripts
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i> Free enterprise licenses for
+                MATLAB, AutoCAD, Adobe CC &amp; Bloomberg
+              </li>
+              <li>
+                <i class="fa-solid fa-check"></i> Cloud H100 GPU compute credits
+                for student machine learning projects
+              </li>
+            </ul>
+            <a href="contact.html" class="button-style-three mt-3"
+              >Request Demo Portal Access <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80"
+              alt="Digital Learning Portal on Laptop"
+              class="rounded-4 shadow-lg w-100"
+              style="height: 400px; object-fit: cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: Industry Co-Op & Undergraduate Research Internships -->
+    <section class="sec_padding_110">
+      <div class="container">
+        <div class="section_title_one centred mb_50">
+          <h5><i class="fa-solid fa-briefcase"></i> Experiential Learning</h5>
+          <h2>Integrated Co-Op Placements &amp; Lab Fellowships</h2>
+          <p>
+            Bridge classroom theory with paid real-world engineering, clinical,
+            and financial industry placements.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="portal_card p-4">
+              <div class="mb-3">
+                <i
+                  class="fa-solid fa-microchip fs-2"
+                  style="color: var(--primary-color)"
+                ></i>
+              </div>
+              <h4>12-Month Industrial Year</h4>
+              <p>
+                Spend your third undergraduate year earning £28,000–£42,000 at
+                partner firms in London, Cambridge, or Munich.
+              </p>
+              <div class="portal_card_footer">
+                <span class="small fw-bold">340+ Partner Employers</span>
+                <a
+                  href="admissions.html"
+                  class="fw-bold"
+                  style="color: var(--primary-color)"
+                  >Details</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="portal_card p-4">
+              <div class="mb-3">
+                <i
+                  class="fa-solid fa-vial-circle-check fs-2"
+                  style="color: var(--theme-color-one)"
+                ></i>
+              </div>
+              <h4>UROP Summer Research Grants</h4>
+              <p>
+                Receive a £3,200 summer bursary to co-author peer-reviewed
+                papers alongside Stackly faculty investigators.
+              </p>
+              <div class="portal_card_footer">
+                <span class="small fw-bold">500+ Summer Grants</span>
+                <a
+                  href="admissions.html"
+                  class="fw-bold"
+                  style="color: var(--primary-color)"
+                  >Details</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="portal_card p-4">
+              <div class="mb-3">
+                <i
+                  class="fa-solid fa-lightbulb fs-2"
+                  style="color: var(--secondary-color)"
+                ></i>
+              </div>
+              <h4>Oxford Spinout Foundry</h4>
+              <p>
+                Turn your final-year dissertation into a venture-backed startup
+                with IP legal support and £50,000 equity-free seed capital.
+              </p>
+              <div class="portal_card_footer">
+                <span class="small fw-bold">65+ Student Startups</span>
+                <a
+                  href="admissions.html"
+                  class="fw-bold"
+                  style="color: var(--primary-color)"
+                  >Details</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: Academic Advising & Student Success Center -->
+    <section class="sec_padding_110 bg_light_portal">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-5">
+            <img
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"
+              alt="Academic Advisor Mentoring Students"
+              class="rounded-4 shadow w-100"
+              style="height: 360px; object-fit: cover"
+            />
+          </div>
+          <div class="col-lg-7">
+            <span class="theme_subtitle"
+              ><i class="fa-solid fa-compass"></i> Personalized Support</span
+            >
+            <h2>
+              360° Academic Advising, Writing Centre &amp; Language Mastery
+            </h2>
+            <p>
+              Every student is matched with a Personal College Tutor and a
+              Career Strategist from Day One through graduation.
+            </p>
+            <div class="row g-3 mt-2">
+              <div class="col-sm-6">
+                <div class="p-3 bg-white rounded-3 border">
+                  <h6 class="mb-1">Academic Writing &amp; Rhetoric Clinic</h6>
+                  <small class="text-muted"
+                    >1-on-1 thesis structuring and statistical methodology
+                    coaching.</small
+                  >
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="p-3 bg-white rounded-3 border">
+                  <h6 class="mb-1">Modern Languages Centre</h6>
+                  <small class="text-muted"
+                    >Credit-bearing courses in 14 global languages at no extra
+                    tuition cost.</small
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 10: Request Academic Prospectus & Syllabus Form -->
+    <section class="sec_padding_110">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5">
+            <span class="theme_subtitle"
+              ><i class="fa-solid fa-file-pdf"></i> Course Prospectus</span
+            >
+            <h2>
+              Download the 2026/27 Academic Syllabus &amp; Module Handbook
+            </h2>
+            <p>
+              Complete the form to receive instant access to detailed module
+              descriptions, reading lists, and faculty research profiles.
+            </p>
+            <div class="p-4 rounded-4 bg_light_portal border mt-4">
+              <h6>Academic Registry Office</h6>
+              <p class="small mb-1">
+                <i class="fa-solid fa-location-dot text-info me-2"></i> 14
+                Wellington Square, Oxford OX1 2JD, United Kingdom
+              </p>
+              <p class="small mb-1">
+                <i class="fa-solid fa-phone text-info me-2"></i>
+                <a href="tel:+919876543210" class="fw-bold">+91 9876543210</a>
+              </p>
+              <p class="small mb-0">
+                <i class="fa-solid fa-envelope text-info me-2"></i>
+                <a href="mailto:info@stacklyuniversity.ac.uk" class="fw-bold"
+                  >info@stacklyuniversity.ac.uk</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="portal_form_box">
+              <h3 class="mb-3">Request Detailed Curriculum Syllabus</h3>
+              <form id="academicsSyllabusForm" class="portal-validated-form">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="acadStudentName" class="form-label"
+                      >Applicant Full Name (Username) *</label
+                    >
+                    <input
+                      type="text"
+                      id="acadStudentName"
+                      name="username"
+                      class="form-control username-field"
+                      data-validation="username"
+                      placeholder="Letters only (e.g. Sophie Clarke)"
+                      autocomplete="name"
+                      required
+                    />
+                    <small class="field_hint"
+                      >Alphabets &amp; spaces only</small
+                    >
+                  </div>
+                  <div class="col-md-6">
+                    <label for="acadStudentPhone" class="form-label"
+                      >Mobile Number *</label
+                    >
+                    <input
+                      type="tel"
+                      id="acadStudentPhone"
+                      name="phone"
+                      class="form-control number-field"
+                      data-validation="number"
+                      placeholder="Digits only (e.g. 9876543210)"
+                      maxlength="15"
+                      autocomplete="tel"
+                      required
+                    />
+                    <small class="field_hint">Numbers only</small>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="acadStudentEmail" class="form-label"
+                      >Email Address *</label
+                    >
+                    <input
+                      type="email"
+                      id="acadStudentEmail"
+                      name="email"
+                      class="form-control"
+                      placeholder="scholar@example.com"
+                      autocomplete="email"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <label for="acadIntakeDate" class="form-label"
+                      >Planned Start Date *</label
+                    >
+                    <input
+                      type="date"
+                      id="acadIntakeDate"
+                      name="start_date"
+                      class="form-control"
+                      data-validation="future-date"
+                      required
+                    />
+                    <small class="field_hint">Today or future dates only</small>
+                  </div>
+                  <div class="col-12 mt-3">
+                    <button type="submit" class="button-style-one w-100">
+                      Send Curriculum Prospectus
+                      <i class="fa-solid fa-download"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Common Footer Component -->
+    <div id="footer-component"></div>
+
+    <!-- Bootstrap 5.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Main Theme Script -->
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

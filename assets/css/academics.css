@@ -1,0 +1,125 @@
+/* School / Faculty Filter Pills */
+.academic_filter_nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.academic_filter_btn {
+  padding: 10px 22px;
+  border-radius: 50px;
+  border: 1.5px solid var(--border-color);
+  background: var(--white);
+  font-family: var(--titillium);
+  font-weight: 700;
+  color: var(--theme-color-two);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.academic_filter_btn.active,
+.academic_filter_btn:hover {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--white);
+  box-shadow: 0 6px 16px rgba(240, 92, 114, 0.3);
+}
+
+/* Degree Curriculum Matrix Cards */
+.degree_program_card {
+  background: var(--white);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  padding: 28px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.degree_program_card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--theme-color-one);
+}
+
+.degree_meta_tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.degree_tag {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 50px;
+  background: rgba(2, 194, 197, 0.12);
+  color: var(--theme-color-one);
+}
+
+.degree_tag.tag_level {
+  background: rgba(240, 92, 114, 0.12);
+  color: var(--primary-color);
+}
+
+/* Academic Calendar Table */
+.academic_calendar_box {
+  background: var(--white);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+.academic_calendar_table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.academic_calendar_table thead {
+  background: var(--theme-color-two);
+  color: var(--white);
+}
+
+.academic_calendar_table th,
+.academic_calendar_table td {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.academic_calendar_table tbody tr:hover {
+  background: rgba(2, 194, 197, 0.05);
+}
+
+.term_status_badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  background: rgba(248, 146, 33, 0.15);
+  color: var(--secondary-color);
+}
+
+/* Digital Library Resource Tiles */
+.library_stat_tile {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  padding: 28px 22px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.library_stat_tile:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-6px);
+}

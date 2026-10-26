@@ -1,0 +1,138 @@
+/* Step-by-Step Application Process */
+.admission_step_card {
+  background: var(--white);
+  border-radius: 18px;
+  padding: 32px 26px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: var(--transition);
+}
+
+.admission_step_card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-color);
+}
+
+.step_number_circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: var(--white);
+  font-family: var(--titillium);
+  font-size: 22px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 18px rgba(240, 92, 114, 0.3);
+}
+
+/* Tuition & Fee Tier Cards */
+.tuition_tier_card {
+  background: var(--white);
+  border-radius: 20px;
+  border: 1.5px solid var(--border-color);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.tuition_tier_card.featured_tier {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-md);
+}
+
+.tuition_tier_card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.tuition_header {
+  padding: 30px 26px;
+  background: var(--theme-color-two);
+  color: var(--white);
+  text-align: center;
+}
+
+.tuition_tier_card.featured_tier .tuition_header {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+}
+
+.tuition_header h3 {
+  color: var(--white);
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.tuition_price {
+  font-family: var(--titillium);
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--white);
+}
+
+.tuition_price span {
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+.tuition_body {
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.tuition_feature_list {
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.tuition_feature_list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.tuition_feature_list li i {
+  color: var(--theme-color-one);
+}
+
+/* Requirements Checklist Box */
+.req_checklist_card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 28px;
+  border-left: 5px solid var(--theme-color-one);
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.req_checklist_card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
