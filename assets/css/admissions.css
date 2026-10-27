@@ -66,6 +66,7 @@
   background: var(--theme-color-two);
   color: var(--white);
   text-align: center;
+  position: relative;
 }
 
 .tuition_tier_card.featured_tier .tuition_header {
@@ -80,6 +81,14 @@
   color: var(--white);
   font-size: 22px;
   margin-bottom: 6px;
+}
+
+.tuition_header .tuition_header_span_tag {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 5px;
 }
 
 .tuition_price {

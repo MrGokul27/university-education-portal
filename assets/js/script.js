@@ -79,6 +79,7 @@
     }
 
     initHeaderAndScrollControls();
+    initScrollReveal();
   }
 
   function initHeaderAndScrollControls() {
@@ -688,12 +689,146 @@
           const itemCat = item.getAttribute("data-filter-item");
           if (targetCategory === "all" || itemCat === targetCategory) {
             item.style.display = "";
+            item.classList.remove("is-revealed");
+            requestAnimationFrame(function () {
+              item.classList.add("is-revealed");
+            });
           } else {
             item.style.display = "none";
           }
         });
       });
     });
+  }
+
+  let revealObserver = null;
+
+  function initScrollReveal() {
+    // Auto-assign data-reveal attributes to any section elements that don't already have them
+    const sections = document.querySelectorAll(
+      "section, main.auth_main_section, footer.main_footer, footer.auth_mini_footer",
+    );
+
+    sections.forEach(function (sec) {
+      // Hero / Inner Banner sections
+      const bannerContent = sec.querySelector(".page_banner_content");
+      if (bannerContent && !bannerContent.hasAttribute("data-reveal")) {
+        bannerContent.setAttribute("data-reveal", "up");
+      }
+
+      const bannerLeft = sec.querySelector(".banner_left_text");
+      if (bannerLeft && !bannerLeft.hasAttribute("data-reveal")) {
+        bannerLeft.setAttribute("data-reveal", "left");
+      }
+
+      const bannerRight = sec.querySelector(".banner_right_card");
+      if (bannerRight && !bannerRight.hasAttribute("data-reveal")) {
+        bannerRight.setAttribute("data-reveal", "right");
+        bannerRight.setAttribute("data-reveal-delay", "150");
+      }
+
+      // Section headers & titles
+      sec
+        .querySelectorAll(
+          ".section_title_one, .section_title_two, .blog_section_home_one .outer_box, .event_section_home_one .mb_50, .services_content_home_one, .funfact_section_home_one .inner_container, .academic_filter_nav, .newsletter_innar_box, .flagship_event_wrap, .editorial_spotlight_box, .academic_calendar_box, .auth_split_card",
+        )
+        .forEach(function (headerEl) {
+          if (!headerEl.hasAttribute("data-reveal")) {
+            headerEl.setAttribute("data-reveal", "up");
+          }
+        });
+
+      // Content rows: stagger direct column children or reveal left/right for 2-column layouts
+      sec.querySelectorAll(".row").forEach(function (row) {
+        if (row.closest("form") || row.closest(".auth_form_panel")) return;
+        const cols = Array.from(row.children).filter(function (child) {
+          return child.className && /\bcol(-|\b)/.test(child.className);
+        });
+
+        if (
+          cols.length === 2 &&
+          row.classList.contains("align-items-center") &&
+          !cols[0].hasAttribute("data-filter-item")
+        ) {
+          if (!cols[0].hasAttribute("data-reveal")) {
+            cols[0].setAttribute("data-reveal", "left");
+          }
+          if (!cols[1].hasAttribute("data-reveal")) {
+            cols[1].setAttribute("data-reveal", "right");
+            cols[1].setAttribute("data-reveal-delay", "150");
+          }
+        } else {
+          cols.forEach(function (col, idx) {
+            if (!col.hasAttribute("data-reveal")) {
+              col.setAttribute("data-reveal", "up");
+              const delay = (idx % 4) * 100;
+              if (delay > 0 && !col.hasAttribute("data-reveal-delay")) {
+                col.setAttribute("data-reveal-delay", String(delay));
+              }
+            }
+          });
+        }
+      });
+
+      // Timeline nodes, Agenda cards, Accordion items
+      sec
+        .querySelectorAll(".timeline_node, .agenda_slot_card, .accordion-item")
+        .forEach(function (item, idx) {
+          if (!item.hasAttribute("data-reveal")) {
+            item.setAttribute("data-reveal", "up");
+            const delay = Math.min(idx * 100, 400);
+            if (delay > 0) {
+              item.setAttribute("data-reveal-delay", String(delay));
+            }
+          }
+        });
+    });
+
+    const revealElements = document.querySelectorAll("[data-reveal]");
+    if (!revealElements.length) return;
+
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      revealElements.forEach(function (el) {
+        el.classList.add("is-revealed");
+      });
+      return;
+    }
+
+    if ("IntersectionObserver" in window) {
+      if (!revealObserver) {
+        revealObserver = new IntersectionObserver(
+          function (entries, obs) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                const target = entry.target;
+                target.classList.add("is-revealed");
+                setTimeout(function () {
+                  target.style.setProperty("--reveal-delay", "0ms");
+                }, 900);
+                obs.unobserve(target);
+              }
+            });
+          },
+          {
+            threshold: 0.06,
+            rootMargin: "0px 0px -30px 0px",
+          },
+        );
+      }
+
+      revealElements.forEach(function (el) {
+        if (!el.classList.contains("is-revealed")) {
+          revealObserver.observe(el);
+        }
+      });
+    } else {
+      revealElements.forEach(function (el) {
+        el.classList.add("is-revealed");
+      });
+    }
   }
 
   function initEventCountdown() {
@@ -725,6 +860,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
+    initScrollReveal();
     initCommonComponents();
     initCounters();
     initStrictFormRestrictions();

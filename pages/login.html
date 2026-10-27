@@ -38,12 +38,6 @@
               src="../assets/images/logoStackly.webp"
               alt="Stackly University Education Portal Logo"
             />
-            <div class="auth_brand_text">
-              <span class="auth_brand_title">Stackly University</span>
-              <span class="auth_brand_subtitle"
-                >University Education Portal</span
-              >
-            </div>
           </a>
           <div class="d-flex align-items-center gap-3">
             <a href="../index.html" class="back_home_btn">
@@ -57,7 +51,7 @@
     <!-- Main Login Card Section -->
     <main class="auth_main_section">
       <div class="container">
-        <div class="auth_split_card">
+        <div class="auth_split_card" data-reveal="zoom">
           <div class="row g-0">
             <!-- Left Visual Panel -->
             <div class="col-lg-5">
@@ -66,7 +60,7 @@
                 style="
                   background-image: url(&quot;../assets/images/login/hero-banner.webp&quot;);
                 "
-              >
+               data-reveal="left">
                 <div>
                   <span class="auth_visual_badge"
                     ><i class="fa-solid fa-shield-halved"></i> Oxford Single
@@ -121,7 +115,7 @@
 
             <!-- Right Login Form Panel -->
             <div class="col-lg-7">
-              <div class="auth_form_panel">
+              <div class="auth_form_panel" data-reveal="right" data-reveal-delay="150">
                 <div class="auth_form_header">
                   <div
                     class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3"
