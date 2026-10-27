@@ -648,26 +648,9 @@
           return;
         }
 
-        let feedbackEl = form.querySelector(".form_feedback_msg");
-        if (!feedbackEl) {
-          feedbackEl = document.createElement("div");
-          feedbackEl.className = "form_feedback_msg alert alert-success mt-3";
-          feedbackEl.setAttribute("role", "status");
-          form.appendChild(feedbackEl);
-        }
-
-        feedbackEl.innerHTML =
-          '<i class="fa-solid fa-circle-check me-2"></i> Thank you! Your submission has been received by Stackly University Education Portal.';
-        feedbackEl.classList.add("show");
-        form.reset();
-
-        form.querySelectorAll('input[type="date"]').forEach(function (d) {
-          d.setAttribute("min", todayStr);
-        });
-
-        setTimeout(function () {
-          feedbackEl.classList.remove("show");
-        }, 6000);
+        window.location.href = isInPagesFolder()
+          ? "404.html"
+          : "pages/404.html";
       });
     });
   }

@@ -22,6 +22,10 @@ body.auth_page_wrapper {
   overflow-y: visible;
 }
 
+input[type="password"]::-ms-reveal {
+  display: none;
+}
+
 .auth_page_wrapper::before {
   content: "";
   position: fixed;
