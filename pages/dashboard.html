@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Stackly University Education Portal Role-Based Dashboard — Student, Faculty, Researcher, Admissions & Alumni Command Center."
+    />
+    <title>Portal Dashboard | Stackly University Education Portal</title>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../assets/images/logoStackly.webp"
+    />
+    <!-- Bootstrap 5.3 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome 6.6 Latest Icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Main Theme & Dashboard Stylesheets -->
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/dashboard.css" />
+  </head>
+  <body class="dashboard_body">
+    <!-- Mobile Sidebar Backdrop Overlay -->
+    <div
+      class="dash_sidebar_backdrop"
+      id="dashSidebarBackdrop"
+      data-no-404="true"
+    ></div>
+
+    <div class="dash_layout_wrapper">
+      <!-- ============================================================
+           LEFT ROLE-BASED SIDEBAR NAVIGATION
+           ============================================================ -->
+      <aside
+        class="dash_sidebar"
+        id="dashSidebar"
+        aria-label="Role Dashboard Sidebar"
+      >
+        <div class="dash_sidebar_top">
+          <!-- Brand Logo & Mobile Close -->
+          <div class="dash_brand_header">
+            <a href="../index.html" class="dash_brand_logo" data-no-404="true">
+              <img
+                src="../assets/images/logoStackly.webp"
+                alt="Stackly University Education Portal Logo"
+              />
+            </a>
+            <button
+              type="button"
+              class="dash_sidebar_close"
+              id="dashSidebarCloseBtn"
+              data-no-404="true"
+              aria-label="Close Sidebar Menu"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+
+          <!-- Logged-In User Profile Card (Populated from Login Form) -->
+          <div class="dash_user_profile_card">
+            <div class="dash_user_avatar_row">
+              <div class="dash_user_avatar" id="sidebarUserAvatar">
+                <i class="fa-solid fa-user-graduate"></i>
+              </div>
+              <div class="dash_user_info">
+                <h5 class="dash_user_name" id="sidebarUserName">
+                  Eleanor Scholar
+                </h5>
+                <p class="dash_user_email" id="sidebarUserEmail">
+                  scholar@stacklyuniversity.ac.uk
+                </p>
+              </div>
+            </div>
+            <div class="dash_user_meta_badges">
+              <span class="dash_role_pill" id="sidebarRolePill">
+                <i class="fa-solid fa-shield-halved"></i> Student
+              </span>
+              <span class="dash_online_dot">Oxford SSO</span>
+            </div>
+          </div>
+
+          <!-- Dynamic Role Menu Section Header -->
+          <div class="dash_sidebar_menu_label" id="sidebarMenuHeaderLabel">
+            <i class="fa-solid fa-layer-group"></i> Student Academic Menu
+          </div>
+
+          <!-- Dynamic Role Sidebar Navigation Items -->
+          <ul class="dash_sidebar_nav" id="dashSidebarNav">
+            <!-- Populated dynamically by dashboard.js per Role -->
+          </ul>
+        </div>
+
+        <!-- Sidebar Bottom Help Box & Logout Controls -->
+        <div class="dash_sidebar_bottom">
+          <button
+            type="button"
+            class="dash_logout_btn"
+            id="sidebarLogoutBtn"
+            data-action="logout"
+            data-no-404="true"
+          >
+            <i class="fa-solid fa-right-from-bracket"></i> Sign Out of Portal
+          </button>
+        </div>
+      </aside>
+
+      <!-- ============================================================
+           MAIN DASHBOARD WRAPPER (TOPBAR + CONTENT + FOOTER)
+           ============================================================ -->
+      <div class="dash_main_wrapper">
+        <!-- Sticky Topbar -->
+        <header class="dash_topbar">
+          <div class="dash_topbar_inner">
+            <div class="dash_topbar_left">
+              <button
+                type="button"
+                class="dash_mobile_toggler"
+                id="dashMobileMenuBtn"
+                data-no-404="true"
+                aria-label="Open Role Sidebar"
+              >
+                <i class="fa-solid fa-bars-staggered"></i>
+              </button>
+              <div class="dash_breadcrumb_title">
+                <h4 id="topbarPortalTitle">Student Portal Dashboard</h4>
+                <span id="topbarPortalSubtitle">
+                  Trinity College • Signed in as scholar@stacklyuniversity.ac.uk
+                </span>
+              </div>
+            </div>
+
+            <div class="dash_topbar_right">
+              <!-- Live Role Switcher (Syncs with Login Role) -->
+              <div class="dash_role_switcher_wrap" data-no-404="true">
+                <label for="dashRoleSwitcher">
+                  <i
+                    class="fa-solid fa-user-tag me-1"
+                    style="color: var(--theme-color-one)"
+                  ></i>
+                  Active Role:
+                </label>
+                <select
+                  id="dashRoleSwitcher"
+                  class="dash_role_select"
+                  data-no-404="true"
+                  aria-label="Switch Portal Role View"
+                >
+                  <option value="Student">Student Portal</option>
+                  <option value="Faculty">Faculty Professor</option>
+                  <option value="Researcher">Doctoral Researcher</option>
+                  <option value="Admissions">Admissions Admin</option>
+                  <option value="Alumni">University Alumni</option>
+                </select>
+              </div>
+
+              <!-- Notification & Quick Action Buttons (Redirect to 404 per requirement) -->
+              <button
+                type="button"
+                class="dash_icon_action_btn"
+                data-redirect-404="true"
+                aria-label="Portal Notifications"
+                title="Notifications"
+              >
+                <i class="fa-regular fa-bell"></i>
+                <span class="dash_notif_dot"></span>
+              </button>
+
+              <a
+                href="#"
+                class="dash_icon_action_btn"
+                aria-label="Oxford Webmail"
+                title="Nexus365 Webmail"
+              >
+                <i class="fa-regular fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </header>
+
+        <!-- Main Content Container -->
+        <main class="dash_content_area">
+          <div class="container-fluid px-0">
+            <!-- ========================================================
+                 SUBMITTED LOGIN CREDENTIALS & ACTIVE SESSION BANNER
+                 Shows exact data entered on pages/login.html
+                 ======================================================== -->
+            <section
+              class="login_session_banner"
+              aria-label="Submitted Login Session Details"
+            >
+              <div class="login_session_header">
+                <div>
+                  <span class="login_session_badge">
+                    <i class="fa-solid fa-circle-check"></i> Oxford Single
+                    Sign-On Verified Session
+                  </span>
+                  <h2 id="sessionBannerWelcome">
+                    Welcome back, Eleanor Scholar (Student Portal)
+                  </h2>
+                  <p id="sessionBannerSubtitle">
+                    Hilary Term 2026/27 — Displaying live role credentials
+                    submitted via the Stackly University Portal Login form.
+                  </p>
+                </div>
+                <div class="d-flex align-items-center flex-wrap gap-2">
+                  <a
+                    href="login.html"
+                    class="dash_btn_sm dash_btn_outline"
+                    data-no-404="true"
+                  >
+                    <i class="fa-solid fa-repeat"></i> Switch Account at Login
+                  </a>
+                  <button
+                    type="button"
+                    class="dash_btn_sm dash_btn_primary"
+                    data-redirect-404="true"
+                  >
+                    <i class="fa-solid fa-id-card"></i> Digital BodCard QR
+                  </button>
+                </div>
+              </div>
+
+              <!-- 6 Equal-Height Login Session Data Tiles -->
+              <div class="row g-3 align-items-stretch">
+                <div class="col-12 col-sm-6 col-xl-4">
+                  <div class="session_data_tile">
+                    <div class="session_tile_icon icon_primary">
+                      <i class="fa-solid fa-user-tag"></i>
+                    </div>
+                    <div class="session_tile_text">
+                      <span>Submitted Portal Role</span>
+                      <strong id="sessionTileRole">
+                        Student — Undergraduate / Postgraduate Student
+                      </strong>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-xl-4">
+                  <div class="session_data_tile">
+                    <div class="session_tile_icon">
+                      <i class="fa-solid fa-envelope-open-text"></i>
+                    </div>
+                    <div class="session_tile_text">
+                      <span>Submitted University Email</span>
+                      <strong id="sessionTileEmail">
+                        scholar@stacklyuniversity.ac.uk
+                      </strong>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-xl-4">
+                  <div class="session_data_tile">
+                    <div class="session_tile_icon icon_secondary">
+                      <i class="fa-solid fa-fingerprint"></i>
+                    </div>
+                    <div class="session_tile_text">
+                      <span>Portal ID &amp; Scholar Handle</span>
+                      <strong id="sessionTileSso">
+                        OXF-STU-8492 (Eleanor Scholar)
+                      </strong>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-xl-4">
+                  <div class="session_data_tile">
+                    <div class="session_tile_icon">
+                      <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div class="session_tile_text">
+                      <span>Password Security Check</span>
+                      <strong id="sessionTilePassword">
+                        Verified Strong (5/5 Security Rules)
+                      </strong>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-xl-4">
+                  <div class="session_data_tile">
+                    <div class="session_tile_icon icon_primary">
+                      <i class="fa-solid fa-laptop-medical"></i>
+                    </div>
+                    <div class="session_tile_text">
+                      <span>Remember Me &amp; Device Policy</span>
+                      <strong id="sessionTilePolicy">
+                        Trusted Device &amp; Secure Session Confirmed
+                      </strong>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-xl-4">
+                  <div class="session_data_tile">
+                    <div class="session_tile_icon icon_secondary">
+                      <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                    <div class="session_tile_text">
+                      <span>Authenticated Timestamp</span>
+                      <strong id="sessionTileTime">
+                        27 Oct 2026, 04:05 PM
+                      </strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- ========================================================
+                 DYNAMIC ROLE & SIDEBAR TAB VIEWPORT
+                 Switches content when any sidebar item is clicked
+                 ======================================================== -->
+            <div id="dashDynamicTabContent">
+              <!-- Populated dynamically by dashboard.js -->
+            </div>
+
+            <!-- ========================================================
+                 COLLEGIATE QUICK RESOURCES & CAMPUS STATUS (EQUAL CARDS)
+                 ======================================================== -->
+            <div class="row g-4 align-items-stretch mt-1">
+              <div class="col-12 col-md-6 col-xl-4">
+                <div class="dash_content_card">
+                  <div>
+                    <div class="dash_card_top_tags">
+                      <span class="dash_tag_badge tag_primary"
+                        >24/7 Campus Desk</span
+                      >
+                      <span class="dash_card_code">WELLINGTON-SQ</span>
+                    </div>
+                    <h4>Oxford IT, Eduroam &amp; Nexus365 Support</h4>
+                    <p>
+                      Configure your university multi-factor authentication,
+                      high-speed eduroam Wi-Fi certificates, and VPN research
+                      tunnel.
+                    </p>
+                  </div>
+                  <div class="dash_card_footer">
+                    <button
+                      type="button"
+                      class="dash_btn_sm dash_btn_primary"
+                      data-redirect-404="true"
+                    >
+                      Open IT Ticket <i class="fa-solid fa-headset"></i>
+                    </button>
+                    <a href="#" class="dash_btn_sm dash_btn_outline">
+                      VPN Profile
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-xl-4">
+                <div class="dash_content_card">
+                  <div>
+                    <div class="dash_card_top_tags">
+                      <span class="dash_tag_badge tag_teal"
+                        >Collegiate Welfare</span
+                      >
+                      <span class="dash_card_code">RADCLIFFE-INF</span>
+                    </div>
+                    <h4>Academic Advisory, Welfare &amp; Disability Office</h4>
+                    <p>
+                      Confidential appointments with college chaplains, peer
+                      supporters, examination access coordinators, and medical
+                      GPs.
+                    </p>
+                  </div>
+                  <div class="dash_card_footer">
+                    <button
+                      type="button"
+                      class="dash_btn_sm dash_btn_teal"
+                      data-redirect-404="true"
+                    >
+                      Book Consultation
+                      <i class="fa-solid fa-calendar-plus"></i>
+                    </button>
+                    <a href="#" class="dash_btn_sm dash_btn_outline">
+                      Welfare Charter
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-12 col-xl-4">
+                <div class="dash_content_card">
+                  <div>
+                    <div class="dash_card_top_tags">
+                      <span class="dash_tag_badge tag_amber"
+                        >University Gazette</span
+                      >
+                      <span class="dash_card_code">HILARY-2027</span>
+                    </div>
+                    <h4>Congregation Notices &amp; Sheldonian Ceremonies</h4>
+                    <p>
+                      Official statutory notices, degree ceremony gowning
+                      schedules, Encaenia ballots, and Vice-Chancellor
+                      circulars.
+                    </p>
+                  </div>
+                  <div class="dash_card_footer">
+                    <button
+                      type="button"
+                      class="dash_btn_sm dash_btn_primary"
+                      data-redirect-404="true"
+                    >
+                      Read Gazette PDF <i class="fa-solid fa-newspaper"></i>
+                    </button>
+                    <a href="#" class="dash_btn_sm dash_btn_outline">
+                      Term Dates
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+
+        <!-- Dashboard Footer -->
+        <footer class="dash_footer">
+          <div
+            class="d-flex flex-wrap align-items-center justify-content-between gap-2"
+          >
+            <div>
+              © 2026
+              <a
+                href="../index.html"
+                class="fw-bold"
+                style="color: var(--primary-color)"
+                data-no-404="true"
+                >Stackly University Education Portal</a
+              >. All Rights Reserved.
+            </div>
+            <div class="d-flex flex-wrap align-items-center gap-3">
+              <span>
+                <i
+                  class="fa-solid fa-location-dot me-1"
+                  style="color: var(--theme-color-one)"
+                ></i>
+                14 Wellington Square, Oxford OX1 2JD, UK
+              </span>
+              <a href="#" class="fw-semibold">Privacy Charter</a>
+              <a href="#" class="fw-semibold">System Status</a>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Bootstrap 5.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Role-Based Dashboard Script -->
+    <script src="../assets/js/dashboard.js"></script>
+  </body>
+</html>

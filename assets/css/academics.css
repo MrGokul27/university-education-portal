@@ -78,6 +78,7 @@
 
 .academic_calendar_table {
   width: 100%;
+  min-width: 680px;
   border-collapse: collapse;
 }
 
@@ -91,6 +92,11 @@
   padding: 16px 20px;
   text-align: left;
   border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+}
+
+.academic_calendar_table th {
+  white-space: nowrap;
 }
 
 .academic_calendar_table tbody tr:hover {

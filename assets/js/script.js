@@ -595,6 +595,37 @@
             return;
           }
 
+          const regUsernameEl = document.getElementById("regUsername");
+          const regRoleEl = document.getElementById("regRole");
+          const regEmailEl = document.getElementById("regEmail");
+          const regRoleVal = regRoleEl ? regRoleEl.value : "Student";
+          const normalizedRegRole =
+            regRoleVal === "Applicant" ? "Admissions" : regRoleVal;
+          const regRoleLabel =
+            regRoleEl && regRoleEl.options[regRoleEl.selectedIndex]
+              ? regRoleEl.options[regRoleEl.selectedIndex].text.trim()
+              : normalizedRegRole;
+
+          try {
+            const registeredData = {
+              username: regUsernameEl ? regUsernameEl.value.trim() : "",
+              role: normalizedRegRole,
+              roleLabel: regRoleLabel,
+              email: regEmailEl ? regEmailEl.value.trim() : "",
+              registeredAt: new Date().toLocaleString("en-GB", {
+                day: "2-digit",
+                month: "short",
+                year: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+              }),
+            };
+            localStorage.setItem(
+              "stacklyRegisteredUser",
+              JSON.stringify(registeredData),
+            );
+          } catch (_) {}
+
           const feedbackEl = document.getElementById("registerFeedbackBox");
           if (feedbackEl) {
             feedbackEl.innerHTML =
@@ -624,21 +655,98 @@
             return;
           }
 
+          const loginRoleEl = document.getElementById("loginRole");
+          const loginEmailEl = document.getElementById("loginEmail");
+          const loginRememberEl = document.getElementById("loginRemember");
+
+          const selectedRole =
+            loginRoleEl && loginRoleEl.value ? loginRoleEl.value : "Student";
+          const selectedRoleLabel =
+            loginRoleEl && loginRoleEl.options[loginRoleEl.selectedIndex]
+              ? loginRoleEl.options[loginRoleEl.selectedIndex].text.trim()
+              : selectedRole;
+          const enteredEmail =
+            loginEmailEl && loginEmailEl.value
+              ? loginEmailEl.value.trim()
+              : "scholar@stacklyuniversity.ac.uk";
+          const passVal = loginPass && loginPass.value ? loginPass.value : "";
+          const rememberChecked = loginRememberEl
+            ? loginRememberEl.checked
+            : true;
+
+          // Derive display name from registered user (if matching email) or from email prefix
+          let displayName = "";
+          try {
+            const regRaw = localStorage.getItem("stacklyRegisteredUser");
+            if (regRaw) {
+              const regObj = JSON.parse(regRaw);
+              if (
+                regObj &&
+                regObj.username &&
+                (!regObj.email ||
+                  regObj.email.toLowerCase() === enteredEmail.toLowerCase())
+              ) {
+                displayName = regObj.username;
+              }
+            }
+          } catch (_) {}
+
+          if (!displayName) {
+            const localPart = enteredEmail.split("@")[0] || "OxfordScholar";
+            displayName = localPart
+              .replace(/[._-]+/g, " ")
+              .replace(/\b\w/g, function (c) {
+                return c.toUpperCase();
+              });
+          }
+
+          const sessionData = {
+            role: selectedRole,
+            roleLabel: selectedRoleLabel,
+            email: enteredEmail,
+            displayName: displayName,
+            passwordStatus:
+              "Verified Strong (" + passVal.length + " chars • 5/5 Rules)",
+            rememberPolicy: rememberChecked
+              ? "Trusted Device & Secure Session Confirmed"
+              : "Standard Session",
+            loginTime: new Date().toLocaleString("en-GB", {
+              day: "2-digit",
+              month: "short",
+              year: "numeric",
+              hour: "2-digit",
+              minute: "2-digit",
+            }),
+            ssoId:
+              "OXF-" +
+              selectedRole.slice(0, 3).toUpperCase() +
+              "-" +
+              Math.floor(1000 + Math.random() * 9000),
+          };
+
+          try {
+            localStorage.setItem(
+              "stacklyPortalSession",
+              JSON.stringify(sessionData),
+            );
+          } catch (_) {}
+
           const feedbackEl = document.getElementById("loginFeedbackBox");
           if (feedbackEl) {
             feedbackEl.innerHTML =
-              '<i class="fa-solid fa-circle-check me-2"></i> Login verified! Welcome to Stackly University Education Portal.';
+              '<i class="fa-solid fa-circle-check me-2"></i> Login verified for <strong>' +
+              enteredEmail +
+              "</strong> (" +
+              selectedRole +
+              ")! Redirecting to your Portal Dashboard...";
             feedbackEl.classList.add("show");
           }
-          form.reset();
-          const box = document.getElementById("loginStrengthBox");
-          if (box) {
-            const fill = box.querySelector(".strength_meter_fill");
-            if (fill) fill.className = "strength_meter_fill";
-            box.querySelectorAll("li[data-rule]").forEach(function (li) {
-              li.classList.remove("valid");
-            });
-          }
+
+          setTimeout(function () {
+            window.location.href = isInPagesFolder()
+              ? "dashboard.html"
+              : "pages/dashboard.html";
+          }, 750);
           return;
         }
 
@@ -851,6 +959,28 @@
    * Redirect any empty or "#" anchor links across the entire portal to the 404 page,
    * and handle "Go Back" buttons on the 404 page.
    */
+  function prefillLoginFromRegistration() {
+    const loginForm = document.getElementById("portalLoginForm");
+    if (!loginForm) return;
+    try {
+      const regRaw = localStorage.getItem("stacklyRegisteredUser");
+      if (!regRaw) return;
+      const regData = JSON.parse(regRaw);
+      const roleSelect = document.getElementById("loginRole");
+      const emailInput = document.getElementById("loginEmail");
+      if (roleSelect && regData.role && !roleSelect.value) {
+        roleSelect.value = regData.role;
+      }
+      if (emailInput && regData.email && !emailInput.value) {
+        emailInput.value = regData.email;
+      }
+    } catch (_) {}
+  }
+
+  /**
+   * Redirect any empty or "#" anchor links across the entire portal to the 404 page,
+   * and handle "Go Back" buttons on the 404 page.
+   */
   function initEmptyLinkAnd404Controls() {
     document.addEventListener("click", function (e) {
       const goBackTrigger = e.target.closest("[data-go-back]");
@@ -873,6 +1003,16 @@
       const link = e.target.closest("a");
       if (!link) return;
 
+      if (
+        link.hasAttribute("data-no-404") ||
+        link.hasAttribute("data-sidebar-tab") ||
+        link.classList.contains("dash_sidebar_link") ||
+        link.classList.contains("dash_logout_btn") ||
+        link.closest("#dashSidebarNav")
+      ) {
+        return;
+      }
+
       const rawHref = (link.getAttribute("href") || "").trim();
       if (
         rawHref === "" ||
@@ -892,6 +1032,7 @@
     initCommonComponents();
     initCounters();
     initStrictFormRestrictions();
+    prefillLoginFromRegistration();
     initFilterTabs();
     initEventCountdown();
     initEmptyLinkAnd404Controls();
