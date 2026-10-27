@@ -1,207 +1,363 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sign In to Stackly University Education Portal - Student, Faculty, Admissions & Researcher Single Sign-On.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sign In to Stackly University Education Portal - Student, Faculty, Admissions & Researcher Single Sign-On."
+    />
     <title>Portal Login | Stackly University Education Portal</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/webp" href="../assets/images/logoStackly.webp">
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../assets/images/logoStackly.webp"
+    />
     <!-- Bootstrap 5.3 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <!-- Font Awesome 6.6 Latest Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      rel="stylesheet"
+    />
     <!-- Main & Auth Stylesheets -->
-    <link rel="stylesheet" href="../assets/css/styles.css">
-    <link rel="stylesheet" href="../assets/css/auth.css">
-</head>
-<body class="auth_page_wrapper">
-
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/auth.css" />
+  </head>
+  <body class="auth_page_wrapper">
     <!-- Top Bar with Logo & Back to Home Button -->
     <header class="auth_topbar">
-        <div class="container">
-            <div class="auth_topbar_inner">
-                <a href="../index.html" class="auth_brand_link">
-                    <img src="../assets/images/logoStackly.webp" alt="Stackly University Education Portal Logo">
-                    <div class="auth_brand_text">
-                        <span class="auth_brand_title">Stackly University</span>
-                        <span class="auth_brand_subtitle">University Education Portal</span>
-                    </div>
-                </a>
-                <div class="d-flex align-items-center gap-3">
-                    <a href="../index.html" class="back_home_btn">
-                        <i class="fa-solid fa-arrow-left"></i> Back to Home
-                    </a>
-                </div>
+      <div class="container">
+        <div class="auth_topbar_inner">
+          <a href="../index.html" class="auth_brand_link">
+            <img
+              src="../assets/images/logoStackly.webp"
+              alt="Stackly University Education Portal Logo"
+            />
+            <div class="auth_brand_text">
+              <span class="auth_brand_title">Stackly University</span>
+              <span class="auth_brand_subtitle"
+                >University Education Portal</span
+              >
             </div>
+          </a>
+          <div class="d-flex align-items-center gap-3">
+            <a href="../index.html" class="back_home_btn">
+              <i class="fa-solid fa-arrow-left"></i> Back to Home
+            </a>
+          </div>
         </div>
+      </div>
     </header>
 
     <!-- Main Login Card Section -->
     <main class="auth_main_section">
-        <div class="container">
-            <div class="auth_split_card">
-                <div class="row g-0">
-                    <!-- Left Visual Panel -->
-                    <div class="col-lg-5">
-                        <div class="auth_visual_panel" style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80');">
-                            <div>
-                                <span class="auth_visual_badge"><i class="fa-solid fa-shield-halved"></i> Oxford Single Sign-On</span>
-                                <div class="auth_visual_content mt-4">
-                                    <h2>Welcome Back to Stackly Digital Campus</h2>
-                                    <p>Access your personalized academic dashboard, Bodleian e-journal repositories, examination schedules, and research cloud compute clusters.</p>
-                                </div>
-                                <div class="auth_feature_pills">
-                                    <div class="auth_feature_pill">
-                                        <i class="fa-solid fa-graduation-cap"></i>
-                                        <div>
-                                            <strong>24/7 Canvas &amp; Lecture Cloud</strong>
-                                            <span>4K recorded seminars, syllabi &amp; grades</span>
-                                        </div>
-                                    </div>
-                                    <div class="auth_feature_pill">
-                                        <i class="fa-solid fa-book-bookmark"></i>
-                                        <div>
-                                            <strong>2.4M+ Digital Library Volumes</strong>
-                                            <span>Instant remote access to global journals</span>
-                                        </div>
-                                    </div>
-                                    <div class="auth_feature_pill">
-                                        <i class="fa-solid fa-microchip"></i>
-                                        <div>
-                                            <strong>Research &amp; Bursary Portal</strong>
-                                            <span>Manage grants, stipends &amp; CAS status</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="auth_visual_footer">
-                                <div class="mb-1"><i class="fa-solid fa-location-dot text-info me-2"></i> 14 Wellington Square, Oxford OX1 2JD, United Kingdom</div>
-                                <div><i class="fa-solid fa-phone text-info me-2"></i> +91 9876543210 &nbsp;|&nbsp; <i class="fa-solid fa-envelope text-info me-1"></i> info@stacklyuniversity.ac.uk</div>
-                            </div>
-                        </div>
+      <div class="container">
+        <div class="auth_split_card">
+          <div class="row g-0">
+            <!-- Left Visual Panel -->
+            <div class="col-lg-5">
+              <div
+                class="auth_visual_panel"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80&quot;);
+                "
+              >
+                <div>
+                  <span class="auth_visual_badge"
+                    ><i class="fa-solid fa-shield-halved"></i> Oxford Single
+                    Sign-On</span
+                  >
+                  <div class="auth_visual_content mt-4">
+                    <h2>Welcome Back to Stackly Digital Campus</h2>
+                    <p>
+                      Access your personalized academic dashboard, Bodleian
+                      e-journal repositories, examination schedules, and
+                      research cloud compute clusters.
+                    </p>
+                  </div>
+                  <div class="auth_feature_pills">
+                    <div class="auth_feature_pill">
+                      <i class="fa-solid fa-graduation-cap"></i>
+                      <div>
+                        <strong>24/7 Canvas &amp; Lecture Cloud</strong>
+                        <span>4K recorded seminars, syllabi &amp; grades</span>
+                      </div>
                     </div>
-
-                    <!-- Right Login Form Panel -->
-                    <div class="col-lg-7">
-                        <div class="auth_form_panel">
-                            <div class="auth_form_header">
-                                <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
-                                    <div class="auth_mode_tabs mb-0">
-                                        <a href="login.html" class="auth_mode_tab active">Sign In</a>
-                                        <a href="register.html" class="auth_mode_tab">Create Account</a>
-                                    </div>
-                                    <a href="../index.html" class="btn btn-sm btn-outline-secondary rounded-pill px-3 fw-bold">
-                                        <i class="fa-solid fa-house me-1"></i> Back to Home
-                                    </a>
-                                </div>
-                                <h1>Sign In to Your Portal Account</h1>
-                                <p>Enter your university credentials below. All fields are required.</p>
-                            </div>
-
-                            <form id="portalLoginForm" class="auth-validated-form" novalidate>
-                                <div class="row g-3">
-                                    <!-- Field 1: Role -->
-                                    <div class="col-12">
-                                        <label for="loginRole" class="form-label">Select Portal Role *</label>
-                                        <div class="auth_input_group">
-                                            <i class="fa-solid fa-user-tag auth_input_icon"></i>
-                                            <select id="loginRole" name="role" class="form-select" required>
-                                                <option value="">Choose your University Role...</option>
-                                                <option value="Student">Undergraduate / Postgraduate Student</option>
-                                                <option value="Faculty">Faculty Professor / Academic Tutor</option>
-                                                <option value="Researcher">Doctoral Researcher / Fellow</option>
-                                                <option value="Admissions">Admissions &amp; Registry Administrator</option>
-                                                <option value="Alumni">University Alumni Member</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <!-- Field 2: Email -->
-                                    <div class="col-12">
-                                        <label for="loginEmail" class="form-label">University Email Address *</label>
-                                        <div class="auth_input_group">
-                                            <i class="fa-solid fa-envelope auth_input_icon"></i>
-                                            <input type="email" id="loginEmail" name="email" class="form-control" placeholder="scholar@stacklyuniversity.ac.uk" autocomplete="email" required>
-                                        </div>
-                                    </div>
-
-                                    <!-- Field 3: Password with Weak Password Validation -->
-                                    <div class="col-12">
-                                        <label for="loginPassword" class="form-label">Account Password *</label>
-                                        <div class="auth_input_group">
-                                            <i class="fa-solid fa-lock auth_input_icon"></i>
-                                            <input type="password" id="loginPassword" name="password" class="form-control password-strength-field" data-strength-target="loginStrengthBox" placeholder="Enter strong password (min 8 chars)" autocomplete="current-password" required>
-                                            <button type="button" class="password_toggle_btn" data-toggle-password="loginPassword" aria-label="Toggle password visibility">
-                                                <i class="fa-regular fa-eye"></i>
-                                            </button>
-                                        </div>
-                                        <div id="loginPasswordError" class="password_error_msg">
-                                            <i class="fa-solid fa-triangle-exclamation me-1"></i> Weak password detected: Password must include 8+ characters, uppercase, lowercase, number, and special character.
-                                        </div>
-
-                                        <!-- Live Weak Password Validation Meter -->
-                                        <div class="password_strength_wrap" id="loginStrengthBox">
-                                            <div class="strength_bar_Header">
-                                                <span>Password Security Level:</span>
-                                                <span class="strength_status_text text-muted">Enter Password</span>
-                                            </div>
-                                            <div class="strength_meter_track">
-                                                <div class="strength_meter_fill"></div>
-                                            </div>
-                                            <ul class="password_criteria_list">
-                                                <li data-rule="length"><i class="fa-solid fa-circle-check"></i> Min 8 characters</li>
-                                                <li data-rule="upper"><i class="fa-solid fa-circle-check"></i> 1 Uppercase (A-Z)</li>
-                                                <li data-rule="lower"><i class="fa-solid fa-circle-check"></i> 1 Lowercase (a-z)</li>
-                                                <li data-rule="number"><i class="fa-solid fa-circle-check"></i> 1 Number (0-9)</li>
-                                                <li data-rule="special"><i class="fa-solid fa-circle-check"></i> 1 Special (@#$%!)</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <!-- Field 4: Remember Me (Required) -->
-                                    <div class="col-12">
-                                        <div class="auth_check_box">
-                                            <input type="checkbox" class="form-check-input" id="loginRemember" name="remember" required>
-                                            <label class="form-check-label" for="loginRemember">
-                                                <strong>Remember me</strong> on this trusted device and confirm secure session policy *
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <!-- Submit Button -->
-                                    <div class="col-12 mt-3">
-                                        <button type="submit" class="button-style-one w-100 py-3">
-                                            Sign In to Education Portal <i class="fa-solid fa-right-to-bracket"></i>
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <div id="loginFeedbackBox" class="form_feedback_msg alert alert-success mt-3" role="status"></div>
-                            </form>
-
-                            <div class="mt-4 pt-3 border-top d-flex flex-wrap align-items-center justify-content-between gap-2 small">
-                                <span>New to Stackly University Portal? <a href="register.html" class="fw-bold" style="color: var(--primary-color);">Register an Account <i class="fa-solid fa-arrow-right"></i></a></span>
-                                <a href="../index.html" class="fw-bold" style="color: var(--theme-color-two);"><i class="fa-solid fa-arrow-left me-1"></i> Back to Home</a>
-                            </div>
-                        </div>
+                    <div class="auth_feature_pill">
+                      <i class="fa-solid fa-book-bookmark"></i>
+                      <div>
+                        <strong>2.4M+ Digital Library Volumes</strong>
+                        <span>Instant remote access to global journals</span>
+                      </div>
                     </div>
+                    <div class="auth_feature_pill">
+                      <i class="fa-solid fa-microchip"></i>
+                      <div>
+                        <strong>Research &amp; Bursary Portal</strong>
+                        <span>Manage grants, stipends &amp; CAS status</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+                <div class="auth_visual_footer">
+                  <div class="mb-1">
+                    <i class="fa-solid fa-location-dot text-info me-2"></i> 14
+                    Wellington Square, Oxford OX1 2JD, United Kingdom
+                  </div>
+                  <div>
+                    <i class="fa-solid fa-phone text-info me-2"></i> +91
+                    9876543210 &nbsp;|&nbsp;
+                    <i class="fa-solid fa-envelope text-info me-1"></i>
+                    info@stacklyuniversity.ac.uk
+                  </div>
+                </div>
+              </div>
             </div>
+
+            <!-- Right Login Form Panel -->
+            <div class="col-lg-7">
+              <div class="auth_form_panel">
+                <div class="auth_form_header">
+                  <div
+                    class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3"
+                  >
+                    <div class="auth_mode_tabs mb-0">
+                      <a href="login.html" class="auth_mode_tab active"
+                        >Sign In</a
+                      >
+                      <a href="register.html" class="auth_mode_tab"
+                        >Create Account</a
+                      >
+                    </div>
+                    <a
+                      href="../index.html"
+                      class="btn btn-sm btn-outline-secondary rounded-pill px-3 fw-bold"
+                    >
+                      <i class="fa-solid fa-house me-1"></i> Back to Home
+                    </a>
+                  </div>
+                  <h1>Sign In to Your Portal Account</h1>
+                  <p>
+                    Enter your university credentials below. All fields are
+                    required.
+                  </p>
+                </div>
+
+                <form
+                  id="portalLoginForm"
+                  class="auth-validated-form"
+                  novalidate
+                >
+                  <div class="row g-3">
+                    <!-- Field 1: Role -->
+                    <div class="col-12">
+                      <label for="loginRole" class="form-label"
+                        >Select Portal Role *</label
+                      >
+                      <div class="auth_input_group">
+                        <i class="fa-solid fa-user-tag auth_input_icon"></i>
+                        <select
+                          id="loginRole"
+                          name="role"
+                          class="form-select"
+                          required
+                        >
+                          <option value="">
+                            Choose your University Role...
+                          </option>
+                          <option value="Student">
+                            Undergraduate / Postgraduate Student
+                          </option>
+                          <option value="Faculty">
+                            Faculty Professor / Academic Tutor
+                          </option>
+                          <option value="Researcher">
+                            Doctoral Researcher / Fellow
+                          </option>
+                          <option value="Admissions">
+                            Admissions &amp; Registry Administrator
+                          </option>
+                          <option value="Alumni">
+                            University Alumni Member
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- Field 2: Email -->
+                    <div class="col-12">
+                      <label for="loginEmail" class="form-label"
+                        >University Email Address *</label
+                      >
+                      <div class="auth_input_group">
+                        <i class="fa-solid fa-envelope auth_input_icon"></i>
+                        <input
+                          type="email"
+                          id="loginEmail"
+                          name="email"
+                          class="form-control"
+                          placeholder="scholar@stacklyuniversity.ac.uk"
+                          autocomplete="email"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Field 3: Password with Weak Password Validation -->
+                    <div class="col-12">
+                      <label for="loginPassword" class="form-label"
+                        >Account Password *</label
+                      >
+                      <div class="auth_input_group">
+                        <i class="fa-solid fa-lock auth_input_icon"></i>
+                        <input
+                          type="password"
+                          id="loginPassword"
+                          name="password"
+                          class="form-control password-strength-field"
+                          data-strength-target="loginStrengthBox"
+                          placeholder="Enter strong password (min 8 chars)"
+                          autocomplete="current-password"
+                          required
+                        />
+                        <button
+                          type="button"
+                          class="password_toggle_btn"
+                          data-toggle-password="loginPassword"
+                          aria-label="Toggle password visibility"
+                        >
+                          <i class="fa-regular fa-eye"></i>
+                        </button>
+                      </div>
+                      <div id="loginPasswordError" class="password_error_msg">
+                        <i class="fa-solid fa-triangle-exclamation me-1"></i>
+                        Weak password detected: Password must include 8+
+                        characters, uppercase, lowercase, number, and special
+                        character.
+                      </div>
+
+                      <!-- Live Weak Password Validation Meter -->
+                      <div class="password_strength_wrap" id="loginStrengthBox">
+                        <div class="strength_bar_Header">
+                          <span>Password Security Level:</span>
+                          <span class="strength_status_text text-muted"
+                            >Enter Password</span
+                          >
+                        </div>
+                        <div class="strength_meter_track">
+                          <div class="strength_meter_fill"></div>
+                        </div>
+                        <ul class="password_criteria_list">
+                          <li data-rule="length">
+                            <i class="fa-solid fa-circle-check"></i> Min 8
+                            characters
+                          </li>
+                          <li data-rule="upper">
+                            <i class="fa-solid fa-circle-check"></i> 1 Uppercase
+                            (A-Z)
+                          </li>
+                          <li data-rule="lower">
+                            <i class="fa-solid fa-circle-check"></i> 1 Lowercase
+                            (a-z)
+                          </li>
+                          <li data-rule="number">
+                            <i class="fa-solid fa-circle-check"></i> 1 Number
+                            (0-9)
+                          </li>
+                          <li data-rule="special">
+                            <i class="fa-solid fa-circle-check"></i> 1 Special
+                            (@#$%!)
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <!-- Field 4: Remember Me (Required) -->
+                    <div class="col-12">
+                      <div class="auth_check_box">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="loginRemember"
+                          name="remember"
+                          required
+                        />
+                        <label class="form-check-label" for="loginRemember">
+                          <strong>Remember me</strong> on this trusted device
+                          and confirm secure session policy *
+                        </label>
+                      </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="col-12 mt-3">
+                      <button type="submit" class="button-style-one w-100 py-3">
+                        Sign In to Education Portal
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div
+                    id="loginFeedbackBox"
+                    class="form_feedback_msg alert alert-success mt-3"
+                    role="status"
+                  ></div>
+                </form>
+
+                <div
+                  class="mt-4 pt-3 border-top d-flex flex-wrap align-items-center justify-content-between gap-2 small"
+                >
+                  <span
+                    >New to Stackly University Portal?
+                    <a
+                      href="register.html"
+                      class="fw-bold"
+                      style="color: var(--primary-color)"
+                      >Register an Account
+                      <i class="fa-solid fa-arrow-right"></i></a
+                  ></span>
+                  <a
+                    href="../index.html"
+                    class="fw-bold"
+                    style="color: var(--theme-color-two)"
+                    ><i class="fa-solid fa-arrow-left me-1"></i> Back to Home</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </main>
 
     <!-- Bottom Footer -->
     <footer class="auth_mini_footer">
-        <div class="container d-flex flex-wrap align-items-center justify-content-between gap-2">
-            <div>© 2026 <a href="../index.html" class="text-warning fw-bold">Stackly University Education Portal</a>. All Rights Reserved.</div>
-            <div>14 Wellington Square, Oxford OX1 2JD, UK &nbsp;|&nbsp; <a href="tel:+919876543210" class="text-white">+91 9876543210</a> &nbsp;|&nbsp; <a href="mailto:info@stacklyuniversity.ac.uk" class="text-white">info@stacklyuniversity.ac.uk</a></div>
+      <div
+        class="container d-flex flex-wrap align-items-center justify-content-between gap-2"
+      >
+        <div>
+          © 2026
+          <a href="../index.html" class="text-warning fw-bold"
+            >Stackly University Education Portal</a
+          >. All Rights Reserved.
         </div>
+        <div>
+          14 Wellington Square, Oxford OX1 2JD, UK &nbsp;|&nbsp;
+          <a href="#" class="text-white">+91 9876543210</a> &nbsp;|&nbsp;
+          <a href="#" class="text-white">info@stacklyuniversity.ac.uk</a>
+        </div>
+      </div>
     </footer>
 
     <!-- Bootstrap 5.3 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Main Theme Script -->
     <script src="../assets/js/script.js"></script>
-</body>
+  </body>
 </html>

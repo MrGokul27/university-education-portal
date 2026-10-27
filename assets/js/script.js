@@ -63,7 +63,7 @@
     if (headerContainer) {
       await loadComponent(
         headerContainer,
-        inPages ? "components/header.html" : "pages/components/header.html"
+        inPages ? "components/header.html" : "pages/components/header.html",
       );
       normalizeComponentPaths(headerContainer);
     } else {
@@ -73,7 +73,7 @@
     if (footerContainer) {
       await loadComponent(
         footerContainer,
-        inPages ? "components/footer.html" : "pages/components/footer.html"
+        inPages ? "components/footer.html" : "pages/components/footer.html",
       );
       normalizeComponentPaths(footerContainer);
     }
