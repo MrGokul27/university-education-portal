@@ -706,7 +706,7 @@
   function initScrollReveal() {
     // Auto-assign data-reveal attributes to any section elements that don't already have them
     const sections = document.querySelectorAll(
-      "section, main.auth_main_section, footer.main_footer, footer.auth_mini_footer",
+      "section, main.auth_main_section, main.error_main_section, footer.main_footer, footer.auth_mini_footer, footer.error_mini_footer",
     );
 
     sections.forEach(function (sec) {
@@ -730,7 +730,7 @@
       // Section headers & titles
       sec
         .querySelectorAll(
-          ".section_title_one, .section_title_two, .blog_section_home_one .outer_box, .event_section_home_one .mb_50, .services_content_home_one, .funfact_section_home_one .inner_container, .academic_filter_nav, .newsletter_innar_box, .flagship_event_wrap, .editorial_spotlight_box, .academic_calendar_box, .auth_split_card",
+          ".section_title_one, .section_title_two, .blog_section_home_one .outer_box, .event_section_home_one .mb_50, .services_content_home_one, .funfact_section_home_one .inner_container, .academic_filter_nav, .newsletter_innar_box, .flagship_event_wrap, .editorial_spotlight_box, .academic_calendar_box, .auth_split_card, .error_showcase_card",
         )
         .forEach(function (headerEl) {
           if (!headerEl.hasAttribute("data-reveal")) {
@@ -740,7 +740,12 @@
 
       // Content rows: stagger direct column children or reveal left/right for 2-column layouts
       sec.querySelectorAll(".row").forEach(function (row) {
-        if (row.closest("form") || row.closest(".auth_form_panel")) return;
+        if (
+          row.closest("form") ||
+          row.closest(".auth_form_panel") ||
+          row.closest(".error_content_col")
+        )
+          return;
         const cols = Array.from(row.children).filter(function (child) {
           return child.className && /\bcol(-|\b)/.test(child.className);
         });
@@ -859,6 +864,46 @@
     setInterval(updateTimer, 1000);
   }
 
+  /**
+   * Redirect any empty or "#" anchor links across the entire portal to the 404 page,
+   * and handle "Go Back" buttons on the 404 page.
+   */
+  function initEmptyLinkAnd404Controls() {
+    document.addEventListener("click", function (e) {
+      const goBackTrigger = e.target.closest("[data-go-back]");
+      if (goBackTrigger) {
+        e.preventDefault();
+        const homeUrl = isInPagesFolder() ? "../index.html" : "index.html";
+        if (window.history.length > 1) {
+          window.history.back();
+          setTimeout(function () {
+            if (window.location.pathname.toLowerCase().includes("404.html")) {
+              window.location.href = homeUrl;
+            }
+          }, 350);
+        } else {
+          window.location.href = homeUrl;
+        }
+        return;
+      }
+
+      const link = e.target.closest("a");
+      if (!link) return;
+
+      const rawHref = (link.getAttribute("href") || "").trim();
+      if (
+        rawHref === "" ||
+        rawHref === "#" ||
+        rawHref.toLowerCase() === "javascript:void(0)" ||
+        rawHref.toLowerCase() === "javascript:;"
+      ) {
+        e.preventDefault();
+        const target404 = isInPagesFolder() ? "404.html" : "pages/404.html";
+        window.location.href = target404;
+      }
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initScrollReveal();
     initCommonComponents();
@@ -866,5 +911,6 @@
     initStrictFormRestrictions();
     initFilterTabs();
     initEventCountdown();
+    initEmptyLinkAnd404Controls();
   });
 })();

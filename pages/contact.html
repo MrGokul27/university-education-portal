@@ -38,7 +38,8 @@
       style="
         background-image: url(&quot;../assets/images/contact/hero-banner.webp&quot;);
       "
-     data-reveal="up">
+      data-reveal="up"
+    >
       <div class="container">
         <div class="page_banner_content" data-reveal="up">
           <span class="page_banner_badge"
@@ -180,6 +181,7 @@
                       class="form-control username-field"
                       data-validation="username"
                       placeholder="Letters only (e.g. Harrison Forde)"
+                      maxlength="16"
                       autocomplete="name"
                       required
                     />
@@ -199,7 +201,8 @@
                       class="form-control number-field"
                       data-validation="number"
                       placeholder="Digits only (e.g. 9876543210)"
-                      maxlength="15"
+                      minlength="10"
+                      maxlength="10"
                       autocomplete="tel"
                       required
                     />
@@ -682,7 +685,10 @@
         <div class="row justify-content-center">
           <div class="col-lg-9">
             <div class="accordion" id="contactFaqAccordion">
-              <div class="accordion-item mb-3 rounded-4 overflow-hidden border" data-reveal="up">
+              <div
+                class="accordion-item mb-3 rounded-4 overflow-hidden border"
+                data-reveal="up"
+              >
                 <h2 class="accordion-header">
                   <button
                     class="accordion-button fw-bold"
@@ -708,7 +714,10 @@
                   </div>
                 </div>
               </div>
-              <div class="accordion-item rounded-4 overflow-hidden border" data-reveal="up">
+              <div
+                class="accordion-item rounded-4 overflow-hidden border"
+                data-reveal="up"
+              >
                 <h2 class="accordion-header">
                   <button
                     class="accordion-button collapsed fw-bold"

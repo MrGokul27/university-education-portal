@@ -1488,6 +1488,7 @@
                       data-validation="username"
                       placeholder="Letters only (e.g. Oliver Bennett)"
                       autocomplete="name"
+                      maxlength="16"
                       required
                     />
                     <small class="field_hint"
@@ -1506,7 +1507,8 @@
                       class="form-control number-field"
                       data-validation="number"
                       placeholder="Digits only (e.g. 9876543210)"
-                      maxlength="15"
+                      minlength="10"
+                      maxlength="10"
                       autocomplete="tel"
                       required
                     />

@@ -40,7 +40,8 @@
       style="
         background-image: url(&quot;../assets/images/academics/hero-banner.webp&quot;);
       "
-     data-reveal="up">
+      data-reveal="up"
+    >
       <div class="container">
         <div class="page_banner_content" data-reveal="up">
           <span class="page_banner_badge"
@@ -800,6 +801,7 @@
                       class="form-control username-field"
                       data-validation="username"
                       placeholder="Letters only (e.g. Sophie Clarke)"
+                      maxlength="16"
                       autocomplete="name"
                       required
                     />
@@ -818,7 +820,8 @@
                       class="form-control number-field"
                       data-validation="number"
                       placeholder="Digits only (e.g. 9876543210)"
-                      maxlength="15"
+                      minlength="10"
+                      maxlength="10"
                       autocomplete="tel"
                       required
                     />
