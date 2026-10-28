@@ -893,6 +893,19 @@ body.dashboard_body {
   align-items: center;
   justify-content: space-between;
   gap: 8px;
+  flex-wrap: nowrap;
+}
+
+.dash_kpi_foot > span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.dash_kpi_foot a {
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 /* ==========================================
