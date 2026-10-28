@@ -23,7 +23,97 @@
     <!-- Main Theme Stylesheet -->
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
-  <body class="boxed_wrapper">
+  <body class="boxed_wrapper preloader-active">
+    <!-- University Theme Preloader (Home Page - ~2 Seconds) -->
+    <div
+      id="universityPreloader"
+      class="uni_preloader"
+      role="status"
+      aria-live="polite"
+      aria-label="Loading Stackly University Education Portal"
+    >
+      <div class="uni_preloader_bg">
+        <span class="uni_orb uni_orb_one"></span>
+        <span class="uni_orb uni_orb_two"></span>
+        <span class="uni_orb uni_orb_three"></span>
+        <div class="uni_grid_overlay"></div>
+      </div>
+
+      <div class="uni_preloader_content">
+        <!-- Collegiate Crest & Orbital Rings -->
+        <div class="uni_crest_stage">
+          <div class="uni_ring uni_ring_outer">
+            <span class="uni_orbit_dot dot_crimson"></span>
+            <span class="uni_orbit_dot dot_gold"></span>
+          </div>
+          <div class="uni_ring uni_ring_middle"></div>
+          <div class="uni_ring uni_ring_inner">
+            <span class="uni_orbit_dot dot_teal"></span>
+          </div>
+
+          <div class="uni_crest_core">
+            <div class="uni_crest_shield">
+              <i class="fa-solid fa-graduation-cap uni_cap_icon"></i>
+              <div class="uni_book_pages">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Brand & Heritage Badge -->
+        <div class="uni_preloader_brand">
+          <div class="uni_heritage_pill">
+            <i class="fa-solid fa-building-columns"></i>
+            <span>EST. 1894 &bull; OXFORD COLLEGIATE HERITAGE</span>
+          </div>
+
+          <div class="uni_logo_row">
+            <img
+              src="assets/images/logoStackly.webp"
+              alt="Stackly University Logo"
+              class="uni_preloader_logo"
+            />
+          </div>
+
+          <h2 class="uni_preloader_title">Stackly <span>University</span></h2>
+          <p class="uni_preloader_motto">
+            Excellence in Higher Education, Research &amp; Global Leadership
+          </p>
+        </div>
+
+        <!-- Progress Bar & Dynamic Status -->
+        <div class="uni_progress_wrapper">
+          <div class="uni_progress_meta">
+            <span id="uniPreloaderStatus" class="uni_status_text">
+              <i class="fa-solid fa-compass-drafting"></i> Initializing Academic
+              Portal...
+            </span>
+            <span id="uniPreloaderPercent" class="uni_percent_text">0%</span>
+          </div>
+          <div class="uni_progress_track">
+            <div id="uniPreloaderBar" class="uni_progress_fill"></div>
+          </div>
+          <div class="uni_pillars_row">
+            <span class="uni_pillar_tag active" data-pillar-step="1">
+              <i class="fa-solid fa-flask"></i> Research
+            </span>
+            <span class="uni_pillar_dot"></span>
+            <span class="uni_pillar_tag" data-pillar-step="2">
+              <i class="fa-solid fa-user-graduate"></i> Academics
+            </span>
+            <span class="uni_pillar_dot"></span>
+            <span class="uni_pillar_tag" data-pillar-step="3">
+              <i class="fa-solid fa-earth-europe"></i> Global Campus
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End University Theme Preloader -->
+
     <!-- Common Header Component Container -->
     <div id="header-component"></div>
 

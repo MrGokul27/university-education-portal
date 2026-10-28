@@ -1027,7 +1027,96 @@
     });
   }
 
+  /**
+   * Home Page University Theme Preloader (~2 Seconds)
+   */
+  function initHomePreloader() {
+    const preloader = document.getElementById("universityPreloader");
+    if (!preloader) return;
+
+    const barEl = document.getElementById("uniPreloaderBar");
+    const percentEl = document.getElementById("uniPreloaderPercent");
+    const statusEl = document.getElementById("uniPreloaderStatus");
+    const pillars = preloader.querySelectorAll("[data-pillar-step]");
+
+    const durationMs = 2000;
+    const startTime = performance.now();
+    let dismissed = false;
+
+    function completePreloader() {
+      if (dismissed) return;
+      dismissed = true;
+      if (barEl) barEl.style.width = "100%";
+      if (percentEl) percentEl.textContent = "100%";
+      if (statusEl) {
+        statusEl.innerHTML =
+          '<i class="fa-solid fa-circle-check"></i> Welcome to Stackly University Portal';
+      }
+      pillars.forEach(function (p) {
+        p.classList.add("active");
+      });
+
+      preloader.classList.add("is-loaded");
+      document.body.classList.remove("preloader-active");
+
+      setTimeout(function () {
+        if (preloader.parentNode) {
+          preloader.parentNode.removeChild(preloader);
+        }
+      }, 650);
+    }
+
+    function animateProgress(now) {
+      if (dismissed) return;
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / durationMs, 1);
+      const pct = Math.round(progress * 100);
+
+      if (barEl) {
+        barEl.style.width = pct + "%";
+      }
+      if (percentEl) {
+        percentEl.textContent = pct + "%";
+      }
+
+      if (statusEl) {
+        if (pct < 38) {
+          statusEl.innerHTML =
+            '<i class="fa-solid fa-compass-drafting"></i> Initializing Academic Portal...';
+        } else if (pct < 76) {
+          statusEl.innerHTML =
+            '<i class="fa-solid fa-building-columns"></i> Loading Faculties & Research Hubs...';
+        } else {
+          statusEl.innerHTML =
+            '<i class="fa-solid fa-graduation-cap"></i> Preparing Oxford Campus Experience...';
+        }
+      }
+
+      pillars.forEach(function (pillar) {
+        const step = parseInt(pillar.getAttribute("data-pillar-step"), 10);
+        if (
+          (step === 1 && pct >= 0) ||
+          (step === 2 && pct >= 38) ||
+          (step === 3 && pct >= 75)
+        ) {
+          pillar.classList.add("active");
+        }
+      });
+
+      if (progress < 1) {
+        requestAnimationFrame(animateProgress);
+      } else {
+        completePreloader();
+      }
+    }
+
+    requestAnimationFrame(animateProgress);
+    // Fallback safety timer at 2.1s
+    setTimeout(completePreloader, durationMs + 100);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
+    initHomePreloader();
     initScrollReveal();
     initCommonComponents();
     initCounters();
