@@ -388,19 +388,19 @@
         ) {
           return;
         }
-        if (e.key.length === 1 && !/^[a-zA-Z\s]$/.test(e.key)) {
+        if (e.key.length === 1 && !/^[a-zA-Z]$/.test(e.key)) {
           e.preventDefault();
         }
       });
 
       input.addEventListener("beforeinput", function (e) {
-        if (e.data && !/^[a-zA-Z\s]+$/.test(e.data)) {
+        if (e.data && !/^[a-zA-Z]+$/.test(e.data)) {
           e.preventDefault();
         }
       });
 
       input.addEventListener("input", function () {
-        const cleaned = this.value.replace(/[^a-zA-Z\s]/g, "");
+        const cleaned = this.value.replace(/[^a-zA-Z]/g, "");
         if (this.value !== cleaned) {
           this.value = cleaned;
         }
@@ -410,7 +410,7 @@
         e.preventDefault();
         const pasted =
           (e.clipboardData || window.clipboardData).getData("text") || "";
-        const cleaned = pasted.replace(/[^a-zA-Z\s]/g, "");
+        const cleaned = pasted.replace(/[^a-zA-Z]/g, "");
         const start = this.selectionStart || 0;
         const end = this.selectionEnd || 0;
         this.value =

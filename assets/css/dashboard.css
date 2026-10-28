@@ -4,6 +4,7 @@ body.dashboard_body {
   font-family: var(--manrope);
   min-height: 100vh;
   overflow-x: clip;
+  padding: 0;
 }
 
 .dash_layout_wrapper {
